@@ -1,0 +1,93 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:400,900,300,900italic);
+body{
+	margin: 0;
+	font-family: 'Lato'
+}
+/* Nav Bar*/
+.nav a{
+	text-decoration: none;
+	color:inherit;
+}
+.nav{
+	background-color: #282828;
+	border:1px solid black;
+	overflow: hidden;
+	height: 70px;
+}
+.logo{
+	float:left;
+	margin-left:70px;
+	margin-top:10px;
+	color:#82BC00;
+	font-size:40px;
+	font-family: 'Lato';
+	font-weight: bolder;
+}
+
+.right{
+	float:right;
+	margin-right: 100px;
+	margin-top:23px;
+	color:white;
+	font-size:18px;
+	font-family: 'Lato';
+
+}
+.navbtn{
+	color:white;
+	padding-right:10px;
+
+}
+.navbtn:hover{
+	color:#82BC00;
+}
+/*End Of Nav Bar*/
+
+/* Header */
+#picture{
+	height: 550px;
+	filter:blur(3px);
+}
+#overlay{
+	background-color:#111111;
+	opacity: 0.9;
+	height: 600px;
+}
+
+.HeaderText{
+ 	position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.HeaderText h1{
+	color:#82BC00;
+	font-size: 6em;
+}
+.HeaderText h2{
+	font-size:2em;
+	margin-top:-40px;
+	text-align: center;
+	color:white;
+}
+.HeaderText a{
+	
+	text-decoration: none;
+	color:white;
+	font-size:2em;
+}
+.btn-naked{
+
+	text-align: center;
+	padding:10px;
+	border:1px solid white;
+	border-radius:6px;
+	transition: background-color 2s ease-in;
+}
+.btn-naked:hover{
+	background-color:white;
+	color:#82BC00;
+}
+
+
+/*End Of Header*/
