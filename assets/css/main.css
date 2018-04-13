@@ -1,30 +1,36 @@
-@import url(http://fonts.googleapis.com/css?family=Lato:400,900,300,900italic);
+@import url(http://fonts.googleapis.com/css?family=Lato:300,300i,400,900,300,900italic);
 body{
 	margin: 0;
 	font-family: 'Lato'
 }
 
+/* Container  */
+.container{
+	margin-left: 10%;
+}
+/*End Of Container */
 /*ScrollBar*/
 /* width */
 ::-webkit-scrollbar {
-    width: 15px;
+    width: 10px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 5px grey; 
+	background-color:#282828;
+    box-shadow: inset 0 0 5px black; 
     border-radius: 0px;
 }
  
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background-color:#282828; 
+    background-color:#EEEEEE; 
     border-radius: 1px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background: #383838; 
+    background: rgba(130,188,0,0.7); 
 }
 /*End of ScrollBar*/
 /* Nav Bar*/
@@ -34,7 +40,7 @@ body{
 }
 .nav{
 	background-color: #282828;
-	border:1px solid black;
+	border-bottom:1px solid black;
 	overflow: hidden;
 	height: 70px;
 }
@@ -271,14 +277,14 @@ body{
 	background-color:#E9EEEE;
 	width: 100%;
 	height: : 450px;
-	max-height: 700px;
+	max-height: 900px;
 	display:  inline-block;
 }
 .About-text{
-	margin-top:50px;
-	margin-left: 50px;
+	margin-top:4%;
+	margin-left: 5%;
 	color:#5C5C5C;
-	font-size:35px;
+	font-size:38px;
 	line-height: 45px;
 
 }
@@ -290,24 +296,19 @@ body{
 	font-weight: 900;
 }
 .About-box{
-	margin:6% 6%;
+	margin:7% ;
 	border:1px solid rgba(1,1,1,0.3);
-	width: 76em;
+	width: 80%;
 	height: 350px;
-	background-color:#111111;
+	background-color:rgba(1,1,1,0.8);;
 	--webkit-box-shadow: 11px 14px 42px -10px rgba(0,0,0,0.75);
 	-moz-box-shadow: 11px 14px 42px -10px rgba(0,0,0,0.75);
 	box-shadow: 11px 14px 42px -10px rgba(0,0,0,0.75);
 	border-radius: 20px;
 }
 .About-img{
-
-	background-size: contain;
-	margin:0;
 	max-width: 350px;
 	max-height: 350px;
-
-
 }
 .About-img img{
 	margin:-1px 0 0 -1px ;
@@ -316,6 +317,45 @@ body{
 	
 }
 .About-text-right{
-	float:right
-;}
+
+	width:72%;
+	margin-left:29%;
+	margin-top:-20%;
+	color:#FFF;
+	font-size:29px;
+}
+.About-text-right a{
+	text-decoration: none;
+	color:#AAAAAA;
+	font-style: italic;
+	font-weight: 300;
+}
+.About-text-right a:hover{
+	color:grey;
+}
 /* End of About */
+
+
+/*Portfolio*/
+#Portfolio{
+	background-image:url("../img/skill-bg.jpg");
+	width: 100%;
+	height: : 450px;
+	max-height: 900px;
+	display:  inline-block;
+}
+.Portfolio-text{
+	margin-top:4%;
+	margin-left: 5%;
+	color:white;
+	font-size:38px;
+	line-height: 45px;
+
+}
+.Portfolio-text h1{
+	font-weight: 400;
+}
+ /* Circles */
+
+/* End Of Circles*/
+/*End of Portfolio */
