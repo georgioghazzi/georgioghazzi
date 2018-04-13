@@ -3,6 +3,30 @@ body{
 	margin: 0;
 	font-family: 'Lato'
 }
+
+/*ScrollBar*/
+/* width */
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 0px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background-color:#282828; 
+    border-radius: 1px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #383838; 
+}
+/*End of ScrollBar*/
 /* Nav Bar*/
 .nav a{
 	text-decoration: none;
@@ -244,7 +268,54 @@ body{
 /* About */
 
 #About{
-	width: 700px;
+	background-color:#E9EEEE;
+	width: 100%;
+	height: : 450px;
+	max-height: 700px;
+	display:  inline-block;
+}
+.About-text{
+	margin-top:50px;
+	margin-left: 50px;
+	color:#5C5C5C;
+	font-size:35px;
+	line-height: 45px;
+
+}
+.About-text h1{
+	font-weight: 400;
 }
 
+#special{
+	font-weight: 900;
+}
+.About-box{
+	margin:6% 6%;
+	border:1px solid rgba(1,1,1,0.3);
+	width: 76em;
+	height: 350px;
+	background-color:#111111;
+	--webkit-box-shadow: 11px 14px 42px -10px rgba(0,0,0,0.75);
+	-moz-box-shadow: 11px 14px 42px -10px rgba(0,0,0,0.75);
+	box-shadow: 11px 14px 42px -10px rgba(0,0,0,0.75);
+	border-radius: 20px;
+}
+.About-img{
+
+	background-size: contain;
+	margin:0;
+	max-width: 350px;
+	max-height: 350px;
+
+
+}
+.About-img img{
+	margin:-1px 0 0 -1px ;
+	border-top-left-radius: 20px;
+	border-bottom-left-radius: 20px;
+	
+}
+.About-text-right{
+	float:right
+;}
 /* End of About */

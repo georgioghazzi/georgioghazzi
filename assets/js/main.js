@@ -1,0 +1,2 @@
+// Scrolly links.
+			$('.scrolly').scrolly();
