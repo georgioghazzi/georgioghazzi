@@ -5,58 +5,88 @@
 
 
 /* Work Slideshow */
-( function($) {
-  
-  $(document).ready(function() {
+( function( $ ) {
+"use strict";
+    $( function() {
+
+		var $time_ul = $('.years-list');
+		var $time_li = $time_ul.children('li');
+		var _val     = ( $( window ).width() > 800 ) ? 200 : 100;
+		var li_width = ( $( window ).width() > 800 ) ? 200 : 60;
+		$time_ul.css( 'width', $time_li.length * li_width );
+
+		var slide1 = $( '.text-slide' );
+		
+		slide1.flexslider({ animation: "slide", controlNav: false, directionNav: false  });
+
+		
+		
+		var _index = 2;
+
+		$time_ul.on('click', '.span',
+		function() {
+			_index = $(this).parent('li').index();
+			move(_index);
+			slide1.flexslider(_index);
+		});
+
+		$('.time-line').on('click',
+		function(event) {
+			var target = event.target;
+			
+			if ( $( target ).hasClass('arrow-left')) {
+				if (_index - 1 < 0) {
+					return false;
+				} else {
+					_index--;
+					move(_index);
+					slide1.flexslider(_index);
+				}
+			}
+
+			if ($(target).hasClass('arrow-right')) {
+				if (_index + 1 > $time_li.length - 1) {
+					return false;
+				} else {
+					_index++;
+					move(_index);
+					slide1.flexslider(_index);
+				}
+			}
+
+			//Prevents further propagation of the current event in the capturing and bubbling phases.
+			event.stopPropagation();
+		});
+
+		function move(index) {
+			console.log(index);
+			$time_li.eq(_index).addClass('on').siblings().removeClass('on');
+			var left1 = -((index - 2) * li_width) + 'px';
+
+			$time_ul.css({
+				'transform': 'translateX(' + left1 + ')',
+				'-webkit-transform': 'translateX(' + left1 + ')'
+			});
+
+		}
+
+		$('span.last').trigger("click");
+
+
+	} );
     
-    var s           = $('.slider'),
-        sWrapper    = s.find('.slider-wrapper'),
-        sItem       = s.find('.slide'),
-        btn         = s.find('.slider-link'),
-        sWidth      = sItem.width(),
-        sCount      = sItem.length,
-        slide_date  = s.find('.slide-date'),
-        slide_title = s.find('.slide-title'),
-        slide_text  = s.find('.slide-text'),
-        slide_more  = s.find('.slide-more'),
-        slide_image = s.find('.slide-image img'),
-        sTotalWidth = sCount * sWidth;
-    
-    sWrapper.css('width', sTotalWidth);
-    sWrapper.css('width', sTotalWidth);
-    
-    var clickCount  = 0;
-    
-    btn.on('click', function(e) {
-      e.preventDefault();
-
-      if( $(this).hasClass('next') ) {
-        
-        ( clickCount < ( sCount - 1 ) ) ? clickCount++ : clickCount = 0;
-      } else if ( $(this).hasClass('prev') ) {
-        
-        ( clickCount > 0 ) ? clickCount-- : ( clickCount = sCount - 1 );
-      }
-      TweenMax.to(sWrapper, 0.4, {x: '-' + ( sWidth * clickCount ) })
+} ) ( jQuery );
 
 
-      //CONTENT ANIMATIONS
 
-      var fromProperties = {autoAlpha:0, x:'-50', y:'-10'};
-      var toProperties = {autoAlpha:0.8, x:'0', y:'0'};
-
-      TweenLite.fromTo(slide_image, 1, {autoAlpha:0, y:'40'}, {autoAlpha:1, y:'0'});
-      TweenLite.fromTo(slide_date, 0.4, fromProperties, toProperties);
-      TweenLite.fromTo(slide_title, 0.6, fromProperties, toProperties);
-      TweenLite.fromTo(slide_text, 0.8, fromProperties, toProperties);
-      TweenLite.fromTo(slide_more, 1, fromProperties, toProperties);
-
-    });
-          
-  });
-})(jQuery);
-
-$('.overlay').addClass('overlay-blue');
 /* End Of Work Slideshow */
+$('input').on('focusin', function() {
+  $(this).parent().find('label').addClass('active');
+});
 
+$('input').on('focusout', function() {
+  if (!this.value) {
+    $(this).parent().find('label').removeClass('active');
+  }
+});
 // Percentage
