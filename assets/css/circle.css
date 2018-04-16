@@ -230,7 +230,7 @@
   border-radius: 50%;
   float: left;
   margin: 0 0.35em 0.3em;
-  background-color: #cccccc;
+  background-color: #3C4C5C;
 }
 .c100 *,
 .c100 *:before,
@@ -282,7 +282,7 @@
   display: block;
   content: " ";
   border-radius: 50%;
-  background-color: #f5f5f5;
+  background-color: #3C4C5C;
   width: 0.84em;
   height: 0.84em;
   -webkit-transition-property: all;
@@ -1062,4 +1062,12 @@
 }
 .c100.orange.dark:hover > span {
   color: #e08833;
+}
+
+.c100.white .bar,
+.c100.white .fill{
+  border-color:white !important;
+}
+.c100.white:hover > span{
+  color:white;
 }
